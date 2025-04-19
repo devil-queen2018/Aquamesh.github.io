@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUA-MESH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AQUA-MESH</h1>
+        <div id="loginPage">
+            <h2>Login</h2>
+            <div class="input-box">
+                <label>Email:</label>
+                <input type="email" id="email">
+            </div>
+            <div class="input-box">
+                <label>Password:</label>
+                <input type="password" id="password">
+            </div>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="welcomePage" class="hidden">
+            <h2>🎉 Congrats on Login 🥳</h2>
+            <button onclick="goToPurpose()">Next</button>
+        </div>
+
+        <div id="purposePage" class="hidden">
+            <h2>PURPOSE OF YOUR VISIT</h2>
+            <button onclick="showWeather()">1. Display Weather Forecasting</button>
+            <button onclick="showStorage()">2. Storage Optimization</button>
+            <button onclick="showDistribution()">3. Determination of the Distribution Ratio</button>
+            <button onclick="showAlerts()">4. Security Alerts and IOT</button>
+        </div>
+
+        <div id="weatherPage" class="hidden">
+            <h2>Weather Forecast ☀️🌧️</h2>
+            <p id="weatherData"></p>
+            <button onclick="goBackToPurpose()">Back</button>
+        </div>
+
+        <div id="storagePage" class="hidden">
+            <h2>Storage Optimization</h2>
+            <label>Enter water capacity (0-2000 liters):</label>
+            <input type="number" id="waterCapacity">
+            <button onclick="checkStorage()">Check</button>
+            <p id="storageResult"></p>
+            <button onclick="goBackToPurpose()">Back</button>
+        </div>
+
+        <div id="distributionPage" class="hidden">
+            <h2>Water Distribution Ratio</h2>
+            <button onclick="checkAllocation('gardening')">Gardening</button>
+            <button onclick="checkAllocation('flushing')">Toilet Flushing</button>
+            <button onclick="checkAllocation('cleaning')">Cleaning</button>
+            <button onclick="checkAllocation('filtration')">Filtration</button>
+            <p id="distributionResult"></p>
+            <button onclick="goBackToPurpose()">Back</button>
+        </div>
+
+        <div id="alertsPage" class="hidden">
+            <h2>Security Alerts and IOT</h2>
+            <button onclick="checkTank()">Check Tank Status</button>
+            <p id="tankStatus"></p>
+            <button onclick="goBackToPurpose()">Back</button>
+        </div>
+
+        <div id="thankYouPage" class="hidden">
+            <h2>Thanks for Visiting 🎉</h2>
+            <p>Will be at your service always # AQUAMESH</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
